@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xLF-qx-nWc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Qov-Ib-L7V">
+            <objects>
+                <navigationController id="xLF-qx-nWc" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xax-ui-dbs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Lz8-DA-zY0" kind="relationship" relationship="rootViewController" id="aaI-iI-0VQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FXK-rg-nco" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1909" y="38"/>
+        </scene>
+        <!--主页-->
+        <scene sceneID="7Tl-hU-faz">
+            <objects>
+                <viewController id="Lz8-DA-zY0" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VnI-Gs-zyn" colorLabel="IBBuiltInLabel-Gray"/>
+                        <viewControllerLayoutGuide type="bottom" id="2Uf-6R-zHc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ogS-5E-6Rf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9qf-a2-3kB">
+                                <rect key="frame" x="0.0" y="100" width="600" height="500"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64X-rm-bnf">
+                                        <rect key="frame" x="255" y="50" width="90" height="30"/>
+                                        <state key="normal" title="跳转页面纵向">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="toTGLView:" destination="Lz8-DA-zY0" eventType="touchUpInside" id="JtG-qs-1Jo"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ie-je-VVc">
+                                        <rect key="frame" x="255" y="119" width="90" height="30"/>
+                                        <state key="normal" title="跳转页面横向">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="toRGCardView:" destination="Lz8-DA-zY0" eventType="touchUpInside" id="Waw-5e-twa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="64X-rm-bnf" firstAttribute="top" secondItem="9qf-a2-3kB" secondAttribute="top" constant="50" id="3jy-Q7-HIl"/>
+                                    <constraint firstItem="3ie-je-VVc" firstAttribute="top" secondItem="64X-rm-bnf" secondAttribute="bottom" constant="39" id="50w-iz-viz"/>
+                                    <constraint firstItem="64X-rm-bnf" firstAttribute="leading" secondItem="3ie-je-VVc" secondAttribute="leading" id="OIg-99-WNq"/>
+                                    <constraint firstItem="64X-rm-bnf" firstAttribute="centerX" secondItem="9qf-a2-3kB" secondAttribute="centerX" id="zkq-qD-9IB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9qf-a2-3kB" firstAttribute="top" secondItem="VnI-Gs-zyn" secondAttribute="bottom" constant="36" id="JYH-oo-XeE"/>
+                            <constraint firstItem="9qf-a2-3kB" firstAttribute="bottom" secondItem="2Uf-6R-zHc" secondAttribute="top" id="ed9-IO-ktx"/>
+                            <constraint firstAttribute="trailing" secondItem="9qf-a2-3kB" secondAttribute="trailing" id="kfA-7v-oVA"/>
+                            <constraint firstItem="9qf-a2-3kB" firstAttribute="leading" secondItem="ogS-5E-6Rf" secondAttribute="leading" id="lbt-m9-epo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="主页" id="5BK-st-aJr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1uP-re-dHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1117" y="38"/>
+        </scene>
+    </scenes>
+</document>

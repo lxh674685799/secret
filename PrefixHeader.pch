@@ -1,0 +1,28 @@
+//
+//  PrefixHeader.pch
+//  secret
+//
+//  Created by 刘旭辉 on 15/7/1.
+//  Copyright (c) 2015年 LXH. All rights reserved.
+//
+
+#ifndef secret_PrefixHeader_pch
+#define secret_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif
+
+
+#ifdef __OBJC__
+
+#import "Const.h"
+//手势解锁
+#import "CLLockVC.h"
+//加密解密
+#import "SecurityUtil.h"
+#import "GTMBase64.h"
+//添加工具类
+#import "AppUtiles.h"
+#endif

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CLLockVC">
+            <connections>
+                <outlet property="label" destination="WJd-gN-yjB" id="95X-dT-fV9"/>
+                <outlet property="lockView" destination="rgw-D9-v6w" id="dbu-Ar-Z3X"/>
+                <outlet property="titleImage" destination="XEC-5S-0ec" id="yLJ-qn-BvV"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="CLLockMainView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uzN-0a-Maq">
+                    <rect key="frame" x="8" y="59" width="584" height="89"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提示信息" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJd-gN-yjB" customClass="CLLockLabel">
+                            <rect key="frame" x="0.0" y="68" width="584" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="1" green="0.0" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="WJd-gN-yjB" firstAttribute="leading" secondItem="uzN-0a-Maq" secondAttribute="leading" id="Izt-LG-xUr"/>
+                        <constraint firstAttribute="trailing" secondItem="WJd-gN-yjB" secondAttribute="trailing" id="gaG-Qb-SNc"/>
+                        <constraint firstAttribute="bottom" secondItem="WJd-gN-yjB" secondAttribute="bottom" id="mSO-hu-576"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwA-Qr-aVE">
+                    <rect key="frame" x="8" y="570" width="584" height="30"/>
+                    <state key="normal" title="忘记密码">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XEC-5S-0ec">
+                    <rect key="frame" x="275" y="67" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="0e8-Yg-WC4"/>
+                        <constraint firstAttribute="width" constant="50" id="xdW-4b-plT"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTU-Fb-Wg9">
+                    <rect key="frame" x="8" y="24" width="584" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="HrY-rR-c7c"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rgw-D9-v6w" customClass="CLLockView">
+                    <rect key="frame" x="0.0" y="156" width="600" height="401"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="rgw-D9-v6w" firstAttribute="trailing" secondItem="uzN-0a-Maq" secondAttribute="trailing" constant="8" id="5ah-cV-C7x"/>
+                <constraint firstItem="XEC-5S-0ec" firstAttribute="top" secondItem="LTU-Fb-Wg9" secondAttribute="bottom" constant="8" symbolic="YES" id="63L-wb-GJN"/>
+                <constraint firstItem="rgw-D9-v6w" firstAttribute="top" secondItem="XEC-5S-0ec" secondAttribute="bottom" constant="39" id="AFj-No-OBa"/>
+                <constraint firstItem="uzN-0a-Maq" firstAttribute="top" secondItem="LTU-Fb-Wg9" secondAttribute="bottom" id="Bz8-Wl-tYP"/>
+                <constraint firstItem="zwA-Qr-aVE" firstAttribute="top" secondItem="rgw-D9-v6w" secondAttribute="bottom" constant="13" id="IOk-q3-Es8"/>
+                <constraint firstItem="zwA-Qr-aVE" firstAttribute="trailing" secondItem="LTU-Fb-Wg9" secondAttribute="trailing" id="IhV-b5-sQz"/>
+                <constraint firstItem="rgw-D9-v6w" firstAttribute="top" secondItem="uzN-0a-Maq" secondAttribute="bottom" constant="8" symbolic="YES" id="asz-k3-EZx"/>
+                <constraint firstAttribute="bottom" secondItem="zwA-Qr-aVE" secondAttribute="bottom" id="dGL-ON-Odt"/>
+                <constraint firstItem="XEC-5S-0ec" firstAttribute="centerX" secondItem="LTU-Fb-Wg9" secondAttribute="centerX" id="dnm-ca-gPe"/>
+                <constraint firstItem="LTU-Fb-Wg9" firstAttribute="leading" secondItem="zwA-Qr-aVE" secondAttribute="leading" id="iqx-3W-bZ2"/>
+                <constraint firstItem="uzN-0a-Maq" firstAttribute="centerX" secondItem="XEC-5S-0ec" secondAttribute="centerX" id="kfJ-7S-Ghw"/>
+                <constraint firstItem="rgw-D9-v6w" firstAttribute="leading" secondItem="uzN-0a-Maq" secondAttribute="leading" constant="-8" id="rqc-7c-ChA"/>
+                <constraint firstAttribute="trailing" secondItem="uzN-0a-Maq" secondAttribute="trailing" constant="8" id="s8d-rc-Exe"/>
+                <constraint firstItem="zwA-Qr-aVE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="ujO-Ue-XVd"/>
+                <constraint firstItem="uzN-0a-Maq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="ygO-xZ-UYB"/>
+                <constraint firstItem="LTU-Fb-Wg9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="24" id="zVs-ub-ADw"/>
+            </constraints>
+            <point key="canvasLocation" x="271" y="273"/>
+        </view>
+    </objects>
+</document>

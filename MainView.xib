@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MainView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6R-aR-729">
+                    <rect key="frame" x="8" y="21" width="584" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="账号:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIU-Au-6tF">
+                    <rect key="frame" x="8" y="85" width="39" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密码：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHA-oV-wlm">
+                    <rect key="frame" x="8" y="114" width="51" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="备注:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERV-py-VSP">
+                    <rect key="frame" x="8" y="143" width="39" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密码账号" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ee-IK-pWh">
+                    <rect key="frame" x="55" y="85" width="307" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="307" id="vDL-tZ-uR6"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="o6R-aR-729" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="3YU-mK-uOG"/>
+                <constraint firstItem="UHA-oV-wlm" firstAttribute="leading" secondItem="VIU-Au-6tF" secondAttribute="leading" id="7Zl-89-gDe"/>
+                <constraint firstItem="ERV-py-VSP" firstAttribute="leading" secondItem="UHA-oV-wlm" secondAttribute="leading" id="BfY-1t-LqN"/>
+                <constraint firstItem="ERV-py-VSP" firstAttribute="top" secondItem="UHA-oV-wlm" secondAttribute="bottom" constant="8" symbolic="YES" id="CBW-ug-nYm"/>
+                <constraint firstItem="VIU-Au-6tF" firstAttribute="leading" secondItem="o6R-aR-729" secondAttribute="leading" id="YTU-A3-8z5"/>
+                <constraint firstItem="UHA-oV-wlm" firstAttribute="top" secondItem="VIU-Au-6tF" secondAttribute="bottom" constant="8" symbolic="YES" id="b6S-Nb-7gY"/>
+                <constraint firstItem="VIU-Au-6tF" firstAttribute="top" secondItem="o6R-aR-729" secondAttribute="bottom" constant="43" id="fkJ-KT-Ktd"/>
+                <constraint firstItem="o6R-aR-729" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="21" id="lMp-MZ-f6o"/>
+                <constraint firstItem="0Ee-IK-pWh" firstAttribute="baseline" secondItem="VIU-Au-6tF" secondAttribute="baseline" id="pI2-a0-XbC"/>
+                <constraint firstItem="o6R-aR-729" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="pds-gi-YZy"/>
+                <constraint firstItem="0Ee-IK-pWh" firstAttribute="leading" secondItem="VIU-Au-6tF" secondAttribute="trailing" constant="8" symbolic="YES" id="v4J-xh-YOl"/>
+            </constraints>
+            <connections>
+                <outlet property="author" destination="0Ee-IK-pWh" id="OkE-YY-bjk"/>
+            </connections>
+            <point key="canvasLocation" x="335" y="284"/>
+        </view>
+    </objects>
+</document>
