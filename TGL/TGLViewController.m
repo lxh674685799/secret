@@ -9,6 +9,7 @@
 #import "TGLViewController.h"
 #import "UIColor+CatColors.h"
 #import "TGLCollectionViewCell.h"
+#import "AddAccViewController.h"
 
 @interface TGLViewController ()
 @property (strong, readonly, nonatomic) NSMutableArray *cards;
@@ -25,12 +26,21 @@
     
     self.navigationItem.title = @"账号";
     
+    UIBarButtonItem *saveBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addAccount)];
+    
+    UIBarButtonItem *searchBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(searchAccount)];
+    
+    NSArray *btnArr = [NSArray arrayWithObjects:saveBtn,searchBtn,nil];
+    
+    [self.navigationItem setRightBarButtonItems:btnArr
+                                       animated:YES];
+    
     self.navigationController.toolbarHidden = YES;
     
     self.stackedLayout.layoutMargin = UIEdgeInsetsZero;
     
-    self.exposedLayoutMargin = UIEdgeInsetsMake(20, 0, 0.0, 0.0);
-   // self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.exposedLayoutMargin = UIEdgeInsetsMake(20, 0, 0,0);
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     
     self.stackedLayout.fillHeight = YES;
     
@@ -41,38 +51,25 @@
     self.unexposedItemsAreSelectable = YES;
   }
 
-#pragma mark - Accessors
-
-- (NSMutableArray *)cards {
+-(void)searchAccount{
+    NSLog(@"显示搜索框");
     
-    if (_cards == nil) {
-        
-        NSArray *cards = @[ @{ @"name" : @"Card #0", @"color" : [UIColor getRandomColor] },
-                            @{ @"name" : @"Card #1", @"color" : [UIColor getRandomColor] },
-                            @{ @"name" : @"Card #2", @"color" : [UIColor getRandomColor] },
-                            @{ @"name" : @"Card #3", @"color" : [UIColor getRandomColor] },
-                            @{ @"name" : @"Card #4", @"color" : [UIColor getRandomColor] },
-                            @{ @"name" : @"Card #5", @"color" : [UIColor getRandomColor] },
-                            @{ @"name" : @"Card #6", @"color" : [UIColor getRandomColor] },
-                            @{ @"name" : @"Card #7", @"color" : [UIColor getRandomColor] },
-                            @{ @"name" : @"Card #8", @"color" : [UIColor getRandomColor] },
-                            @{ @"name" : @"Card #8", @"color" : [UIColor getRandomColor] },
-                            @{ @"name" : @"Card #8", @"color" : [UIColor getRandomColor] },
-                            @{ @"name" : @"Card #8", @"color" : [UIColor getRandomColor] },
-                            @{ @"name" : @"Card #8", @"color" : [UIColor getRandomColor] },
-                            @{ @"name" : @"Card #8", @"color" : [UIColor getRandomColor] },
-                            @{ @"name" : @"Card #8", @"color" : [UIColor getRandomColor] },
-                            @{ @"name" : @"Card #8", @"color" : [UIColor getRandomColor] },
-                            @{ @"name" : @"Card #8", @"color" : [UIColor getRandomColor] },
-                            @{ @"name" : @"Card #8", @"color" : [UIColor getRandomColor] },
-                            @{ @"name" : @"Card #8", @"color" : [UIColor getRandomColor] },
-                            @{ @"name" : @"Card #9", @"color" : [UIColor getRandomColor] }];
-        
-        _cards = [NSMutableArray arrayWithArray:cards];
-    }
     
-    return _cards;
+    
 }
+
+-(void)addAccount{
+    NSLog(@"跳转到添加页面");
+    AddAccViewController *myBusinessVC = [[AddAccViewController alloc]initWithNibName:@"AddAccViewController" bundle:nil];
+    [self.navigationController pushViewController:myBusinessVC animated:YES];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+     _cards = [Account searchWithWhere:nil orderBy:nil offset:0 count:0];
+    [self.collectionView reloadData];
+}
+
+#pragma mark - Accessors
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     
@@ -94,17 +91,21 @@
     TGLCollectionViewCell *cell = [[TGLCollectionViewCell alloc]init];
     cell = [collectionView dequeueReusableCellWithReuseIdentifier: @"CardCell"
                                                      forIndexPath:indexPath];
-    NSDictionary *card = self.cards[indexPath.item];
-    cell.color = card[@"color"];
-    cell.titleLabel.text = [NSString stringWithFormat:@"标题----》%ld",(long)indexPath.item];
-    cell.titleLabel.textColor = [UIColor getRandomColor];
+ 
+    Account *account = self.cards[indexPath.item];
+    cell.color = [UIColor getRandomColor];
+    cell.titleLabel.text = account.userName;
+    //cell.titleLabel.textColor = [UIColor getRandomColor];
+    cell.phoneView.text = account.phone;
+    cell.pwdView.text = account.pwd;
+    cell.remarkView.text = account.remarks;
 
     return cell;
 }
 
 #pragma mark - Overloaded methods
 
-- (void)moveItemAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+- (void)moveItemAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath{
     NSDictionary *card = self.cards[fromIndexPath.item];
     [self.cards removeObjectAtIndex:fromIndexPath.item];
     [self.cards insertObject:card atIndex:toIndexPath.item];

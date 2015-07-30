@@ -13,8 +13,8 @@
 #import "CLLockNavVC.h"
 #import "CLLockView.h"
 
-
-
+#import <CocoaSecurity/Base64.h>
+#import <CocoaSecurity/CocoaSecurity.h>
 @interface CLLockVC ()
 
 /** 操作成功：密码设置成功、密码验证成功 */
@@ -114,8 +114,11 @@
         [self.label showNormalMsg:CoreLockPWSuccessTitle];
         
         //加密
+       
+       NSString *base = [pwd base64EncodedString];
         
-        NSString *pwdAES = [SecurityUtil encryptAESData:pwd app_key:KEY];
+        NSString *pwdAES = [CocoaSecurity aesEncrypt:pwd key:(NSString *)KEY].base64;
+
         
         //存储密码
         [CoreArchive setStr:pwdAES key:CoreLockPWDKey];
@@ -150,8 +153,7 @@
         //取出本地密码
         NSString *pwdLocal = [CoreArchive strForKey:CoreLockPWDKey];
         
-        NSData *EncryptData = [GTMBase64 decodeString:pwdLocal]; //解密前进行GTMBase64编码
-        NSString * pwdDecrypt = [SecurityUtil decryptAESData:EncryptData app_key:KEY];
+        NSString * pwdDecrypt =[CocoaSecurity aesDecryptWithBase64:pwdLocal key:(NSString *)KEY].utf8String;
 
         BOOL res = [pwd isEqualToString:pwdDecrypt];
         

@@ -12,4 +12,7 @@
 @property (weak, nonatomic) IBOutlet UIView *roundedView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (copy, nonatomic) UIColor *color;
+@property (weak, nonatomic) IBOutlet UITextView *remarkView;
+@property (weak, nonatomic) IBOutlet UILabel *phoneView;
+@property (weak, nonatomic) IBOutlet UILabel *pwdView;
 @end

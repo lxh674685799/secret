@@ -16,13 +16,17 @@
 
 
 #ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 #import "Const.h"
 //手势解锁
 #import "CLLockVC.h"
-//加密解密
-#import "SecurityUtil.h"
-#import "GTMBase64.h"
 //添加工具类
 #import "AppUtiles.h"
+
+//pod
+#import "LKDBHelper.h"
+#import "IQKeyboardManager.h"
+
 #endif
